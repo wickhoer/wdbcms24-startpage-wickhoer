@@ -1,12 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <title>Min startsida</title>
 </head>
+
 <body>
-    
+    <div class="container-md bg-transparent">
+        <div class="row">
+            <div class="col text-center">
+                <h1 class="welcome">Min hemsida</h1>
+            </div>
+            <div class="col-auto">
+                <button type="button" class="btn btn-outline-secondary" id="menuButton" data-bs-toggle="modal"
+                    data-bs-target="#myModal">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Settings</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+
+                <div class="modal-body">
+
+                    <div class="mb-3">
+                        <label for="weatherApiKey" class="form-label">Weather API nyckel</label>
+                        <input type="text" class="form-control" id="weatherApiKey"
+                            placeholder="Lagra din weather API nyckel">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="gptKey" class="form-label">ChatGPT API nyckel</label>
+                        <input type="text" class="form-control" id="gptKey" placeholder="Lagra din GPT API nyckel">
+                    </div>
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Stäng</button>
+                    <button type="button" class="btn btn-info" id="saveButton">Spara ändringar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-4 mb-3">
+                <div class="card bg-danger bg-gradient text-center dazzling">
+                    <div class="card-header">
+                        <span class="fw-bold">IP-adress samt plats </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="dispIP"></div>
+                        <div class="dispGeo"></div>
+
+                    </div>
+                    <div class="card-footer">
+                        <span class="fst-italic">Powered by ipify and openstreetmaps</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-3 offset-md-2">
+                <div class="card bg-secondary bg-gradient text-center dazzling">
+                    <div class="card-header">
+                        <span class="fw-bold">Ask Me Anything</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="userInput" placeholder="Ask something clever..."
+                                autocomplete="off">
+                            <button class="btn btn-primary" id="sendButton">Ask!</button>
+                        </div>
+                        <div id="response"></div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="fst-italic">Powered by ChatGPT</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 mb-3">
+                <div class="card bg-info bg-gradient text-center dazzling">
+                    <div class="card-header">
+                        <span class="fw-bold cityDisp">Väder</span>
+                    </div>
+                    <div class="card-body row align-items-center">
+                        <div class="card-body row align-items-center">
+                            <div class="imgDisp col-md-4"></div>
+                            <div class="weathDisp col-md-5 offset-md-1"></div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="fst-italic">Powered by OpenWeatherApp</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 mb-3">
+                    <div class="card bg-success bg-gradient text-center dazzling">
+                        <div class="card-header">
+                            <span class="fw-bold">1€ i andra valutor</span>
+                        </div>
+                        <div class="card-body curDisp">
+                        </div>
+                        <div class="card-footer">
+                            <span class="fst-italic">Powered by FrakfurterApp</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3 offset-md-2">
+                    <div class="card bg-warning bg-gradient text-center dazzling">
+                        <div class="card-header">
+                            <span class="fw-bold">Random Quote</span>
+                        </div>
+                        <div class="card-body quote">
+                        </div>
+                        <div class="card-footer">
+                            <span class="fst-italic">Powered by Quotable</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 </body>
+
 </html>

@@ -1,0 +1,39 @@
+/* Animationer som fanns inte med i BootStrap5 (hittade åtm ingen info om saken)
+
+All annan CSS är gjord med BS5, använde getbootstrap.com samt w3schools för information/hjälp */
+
+body {
+    background: linear-gradient(130deg, #4b0101, #171616);
+    background-size: 190% 190%;
+    
+    animation: gradientAnimation 5s forwards;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+.dazzling {
+    animation: dazzling 5s forwards;
+}
+
+@keyframes dazzling {
+    0% {
+        background-color: rgba(7, 7, 7, 0.8);
+        box-shadow: 0 0 50px rgba(7, 7, 7, 0.8);
+    }
+    100% {
+        background-color: rgba(255, 255, 255, 0);
+        box-shadow: 0 0 30px rgba(156, 155, 155, 0.8);
+    }
+}
+
+.welcome {
+    color: white;
+    text-shadow: 5px 5px 5px  #4b0101;
+}
